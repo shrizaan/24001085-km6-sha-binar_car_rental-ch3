@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "eb19a6e8-1f58-4049-81df-cf931d882697",
+		"name": "Shahrizan-FSW2-Challenge 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Car with Invalid ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cars/xxx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cars",
+						"xxx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Car with Valid ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cars/e0a96736-a2d5-40ca-87de-64b59cac85d8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cars",
+						"e0a96736-a2d5-40ca-87de-64b59cac85d8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Car with Invalid Payload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"plate\": false,\r\n    \"manufacture\": \"Honda\",\r\n    \"model\": \"Brio\",\r\n    \"description\": \"Compact and fuel-efficient city car. Perfect for navigating urban areas.\",\r\n    \"availableAt\": \"2023-12-15T08:00:00.000Z\",\r\n    \"transmission\": \"Manual\",\r\n    \"available\": false, \r\n    \"type\": \"City Car\",\r\n    \"year\": \"2021\",\r\n    \"options\": [\r\n        \"Audio System with Bluetooth\", \r\n        \"AC\",\r\n        \"Power Windows\",\r\n        \"Alloy Wheels\"\r\n    ],\r\n    \"specs\": [\r\n        \"1.2L i-VTEC Engine\",\r\n        \"Airbags\",\r\n        \"Anti-lock Braking System (ABS)\",\r\n        \"Electronic Stability Control (ESC)\"\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Car with Valid Payload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"plate\": \"DK 4021 XY\",\r\n    \"manufacture\": \"Honda\",\r\n    \"model\": \"Brio\",\r\n    \"image\": \"./images/honda-brio.jpg\",\r\n    \"rentPerDay\": 250000,\r\n    \"capacity\": 5,\r\n    \"description\": \"Compact and fuel-efficient city car. Perfect for navigating urban areas.\",\r\n    \"availableAt\": \"2024-03-20T08:00:00.000Z\",\r\n    \"transmission\": \"Manual\",\r\n    \"available\": true, \r\n    \"type\": \"Hatchback\",\r\n    \"year\": 2021,\r\n    \"options\": [\r\n        \"Audio System with Bluetooth\", \r\n        \"AC\",\r\n        \"Power Windows\",\r\n        \"Alloy Wheels\"\r\n    ],\r\n    \"specs\": [\r\n        \"1.2L i-VTEC Engine\",\r\n        \"Airbags\",\r\n        \"Anti-lock Braking System (ABS)\",\r\n        \"Electronic Stability Control (ESC)\"\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/cars",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Car with Invalid ID",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"plate\": \"DK 4021 XY\",\r\n    \"manufacture\": \"Honda\",\r\n    \"model\": \"Brio\",\r\n    \"image\": \"./images/honda-brio.jpg\",\r\n    \"rentPerDay\": 250000,\r\n    \"capacity\": 5,\r\n    \"description\": \"Compact and fuel-efficient city car. Perfect for navigating urban areas.\",\r\n    \"availableAt\": \"2023-12-15T08:00:00.000Z\",\r\n    \"transmission\": \"Manual\",\r\n    \"available\": true, \r\n    \"type\": \"City Car\",\r\n    \"year\": 2021,\r\n    \"options\": [\r\n        \"Audio System with Bluetooth\", \r\n        \"AC\",\r\n        \"Power Windows\",\r\n        \"Alloy Wheels\"\r\n    ],\r\n    \"specs\": [\r\n        \"1.2L i-VTEC Engine\",\r\n        \"Airbags\",\r\n        \"Anti-lock Braking System (ABS)\",\r\n        \"Electronic Stability Control (ESC)\"\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/cars/xxx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cars",
+						"xxx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Car with Invalid Payload",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"plate\": false,\r\n    \"manufacture\": \"Honda\",\r\n    \"model\": \"Brio\",\r\n    \"description\": \"Compact and fuel-efficient city car. Perfect for navigating urban areas.\",\r\n    \"availableAt\": \"2023-12-15T08:00:00.000Z\",\r\n    \"transmission\": \"Manual\",\r\n    \"available\": false, \r\n    \"type\": \"City Car\",\r\n    \"year\": \"2021\",\r\n    \"options\": [\r\n        \"Audio System with Bluetooth\", \r\n        \"AC\",\r\n        \"Power Windows\",\r\n        \"Alloy Wheels\"\r\n    ],\r\n    \"specs\": [\r\n        \"1.2L i-VTEC Engine\",\r\n        \"Airbags\",\r\n        \"Anti-lock Braking System (ABS)\",\r\n        \"Electronic Stability Control (ESC)\"\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/cars/9ff03bbc-b18c-4ba7-8f3a-4c4b5c2f6c77",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cars",
+						"9ff03bbc-b18c-4ba7-8f3a-4c4b5c2f6c77"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Car with Valid ID and Payload",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"plate\": \"BG 23ED3 DE\",\r\n    \"manufacture\": \"Toyota\",\r\n    \"model\": \"Yaris\",\r\n    \"image\": \"./images/toyota-yaris.jpg\",\r\n    \"rentPerDay\": 300000,\r\n    \"capacity\": 5,\r\n    \"description\": \"Spacious and reliable city car. Great for everyday commuting.\",\r\n    \"availableAt\": \"2024-03-21T08:00:00.000Z\",\r\n    \"transmission\": \"Automatic\",\r\n    \"available\": true, \r\n    \"type\": \"Supermini\",\r\n    \"year\": 2022,\r\n    \"options\": [\r\n        \"Touchscreen Infotainment System\", \r\n        \"AC\",\r\n        \"Power Steering\",\r\n        \"Keyless Entry\"\r\n    ],\r\n    \"specs\": [\r\n        \"1.5L VVT-i Engine\",\r\n        \"Multiple Airbags\",\r\n        \"Anti-lock Braking System (ABS)\",\r\n        \"Vehicle Stability Control (VSC)\"\r\n    ]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/cars/6e2bc663-5197-441a-957b-bc75e4a2da7c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cars",
+						"6e2bc663-5197-441a-957b-bc75e4a2da7c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Car with Invalid ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cars/xxx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cars",
+						"xxx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Car with Valid ID",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/cars/e0a96736-a2d5-40ca-87de-64b59cac85d8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cars",
+						"e0a96736-a2d5-40ca-87de-64b59cac85d8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
