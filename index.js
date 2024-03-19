@@ -10,6 +10,16 @@ app.use(express.json());
 // Untuk menampilkan halaman landing page dan cari mobil
 app.use('/public', express.static('public'));
 
+// CORS Configuration
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  );
+  next();
+});
+
 // Routes
 app.get('/', (req, res) => {
   res.status(200).json({
