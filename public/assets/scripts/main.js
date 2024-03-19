@@ -5,7 +5,7 @@ const selectDate = document.getElementById('select-date');
 
 async function searchCar(driverType, selectDate, selectTime, totalPassanger) {
   const response = await fetch(
-    `http://localhost:3000/cars?selectDate=${selectDate}&selectTime=${selectTime}&totalPassanger=${totalPassanger}`
+    `http://localhost:3000/cars?driverType=${driverType}&selectDate=${selectDate}&selectTime=${selectTime}&totalPassanger=${totalPassanger}`
   );
   const { data } = await response.json();
   return data;
